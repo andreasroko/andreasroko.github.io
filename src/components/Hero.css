@@ -1,0 +1,128 @@
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../assets/lakeBackground.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    width: 45%;
+    overflow: hidden;
+    height: 0;
+    animation: expandHeight 2s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes expandHeight {
+    from {
+        height: 0;
+    }
+    99% {
+        height: 120px;
+    }
+    to {
+        height: auto;
+    }
+}
+
+
+.main-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+}
+
+.nav-links {
+    padding-top: 30px;
+    display: flex;
+}
+
+.nav-links div {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+    padding: 8px 20px;
+    border: 1px solid white;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-links div:hover {
+    background-color: white;
+    color: black;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 15px;
+  width: 100%;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.horizontal-padding-small {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.profile-picture {
+    width: 150px; /* Set the desired size */
+    height: 150px; /* Make height the same as width */
+    border-radius: 50%; /* Make it a circle */
+    object-fit: cover; /* Ensure the image scales nicely within the circle */
+    border: 2px solid white; /* Optional: Add a white border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for a 3D effect */
+}
+
+.verticalLine {
+    width: 0;
+    height: 0;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    animation: lineHeight 2s ease-in-out forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes lineHeight {
+    from {
+        height: 0;
+    }
+    99% {
+        height: 69px;
+    }
+    to {
+        height: 70px;
+    }
+}
