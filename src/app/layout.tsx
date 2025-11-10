@@ -28,6 +28,10 @@ export default function RootLayout({
         <div className="container">
           <div className="overlay">
             {children}
+            <div className='footer'>
+              <div className='horizontal-padding-small'>© ANDREAS ROKOPANOS {new Date().getFullYear()}</div>
+              <div className='horizontal-padding-small' aria-label='Photo Location'>📌 Tymphi</div>
+            </div>
           </div>
         </div>
       </body>

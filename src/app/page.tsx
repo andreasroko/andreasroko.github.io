@@ -20,10 +20,6 @@ export default function Home() {
         <Link href="/projects" className='actionButton'>PROJECTS</Link>
         <Link href="/contact" className='actionButton'>CONTACT</Link>
       </div>
-      <div className='footer'>
-        <div className='horizontal-padding-small'>© ANDREAS ROKOPANOS {new Date().getFullYear()}</div>
-        <div className='horizontal-padding-small' aria-label='Photo Location'>📌 Tymphi</div>
-      </div>
     </div>
   );
 }
