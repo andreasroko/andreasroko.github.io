@@ -1,6 +1,7 @@
 "use client";
 import './page.css';
 import Image from "next/image";
+import Link from "next/link";
 import portraitImg from '../../public/portrait.jpeg'
 
 export default function Home() {
@@ -19,9 +20,9 @@ export default function Home() {
           </p>
         </div>
         <div className='nav-links'>
-          <div className='actionButton' onClick={handleResume}>RESUME</div>
-          <div className='actionButton'>PROJECTS</div>
-          <div className='actionButton'>CONTACT</div>
+          <Link href="/resume" className='actionButton'>RESUME</Link>
+          <Link href="/projects" className='actionButton'>PROJECTS</Link>
+          <Link href="/contact" className='actionButton'>CONTACT</Link>
         </div>
         <div className='footer'>
           <div className='horizontal-padding-small'>© ANDREAS ROKOPANOS {new Date().getFullYear()}</div>
