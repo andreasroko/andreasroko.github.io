@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    overflow: visible;
+}
+
+.scrollable {
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 100%;
+    height: auto;
+}
