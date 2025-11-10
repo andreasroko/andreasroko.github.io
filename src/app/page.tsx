@@ -1,16 +1,16 @@
-import React from 'react';
-import './Hero.css';
+"use client";
+import './page.css';
+import Image from "next/image";
 import portraitImg from '../assets/portrait.jpeg'
 
-const HeroSection = () => {
-  let currentlyShowing = ''
+export default function Home() {
   const handleResume = () => {
     // TODO: Must show resume information (studies/work1/work2)
   };
   return (
     <div className='hero-section'>
       <div className='overlay'>
-        <img src={portraitImg} alt='My Portrait' className='profile-picture' />
+        <Image src={portraitImg} alt='My Portrait' className='profile-picture' />
         <div className='verticalLine'></div>
         <div className='content'>
           <h1 className='main-title'>ANDREAS ROKOPANOS</h1>
@@ -30,6 +30,4 @@ const HeroSection = () => {
       </div>
     </div>
   );
-};
-
-export default HeroSection;
+}
