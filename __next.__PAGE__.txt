@@ -1,10 +1,10 @@
 1:"$Sreact.fragment"
 2:I[1304,[],"ClientPageRoot"]
-3:I[8284,["591","static/chunks/591-760907bf71c8658b.js","974","static/chunks/app/page-6ff11a4e8a37f28f.js"],"default"]
+3:I[8284,["591","static/chunks/591-760907bf71c8658b.js","974","static/chunks/app/page-53af4fa7d0c30565.js"],"default"]
 6:I[484,[],"OutletBoundary"]
 7:"$Sreact.suspense"
 :HL["/andreasroko.github.io/_next/static/css/b1233eaeb75fd28c.css","style"]
-0:{"buildId":"0jPCFiLmr5PDmu1l6RM_E","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/andreasroko.github.io/_next/static/css/b1233eaeb75fd28c.css","precedence":"next"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"MrXFHwR0nZT8i3uA_Dr_S","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/andreasroko.github.io/_next/static/css/b1233eaeb75fd28c.css","precedence":"next"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null
