@@ -3,12 +3,11 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url(../../public/lakeBackground.jpeg);
-    background-size: cover;
-    background-position: center;
     position: relative;
     color: white;
     text-align: center;
+    flex-direction: column;
+    width: 100%;
 }
 
 .overlay {
