@@ -1,7 +1,7 @@
 "use client";
 import './page.css';
 import Image from "next/image";
-import portraitImg from '../assets/portrait.jpeg'
+import portraitImg from '../../public/portrait.jpeg'
 
 export default function Home() {
   const handleResume = () => {

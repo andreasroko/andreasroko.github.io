@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url(../assets/lakeBackground.jpeg);
+    background-image: url(../../public/lakeBackground.jpeg);
     background-size: cover;
     background-position: center;
     position: relative;
