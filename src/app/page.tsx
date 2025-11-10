@@ -24,7 +24,7 @@ export default function Home() {
           <div className='actionButton'>CONTACT</div>
         </div>
         <div className='footer'>
-          <div className='horizontal-padding-small'>© ANDREAS ROKOPANOS 2024</div>
+          <div className='horizontal-padding-small'>© ANDREAS ROKOPANOS {new Date().getFullYear()}</div>
           <div className='horizontal-padding-small' aria-label='Photo Location'>📌 Tymphi</div>
         </div>
       </div>
