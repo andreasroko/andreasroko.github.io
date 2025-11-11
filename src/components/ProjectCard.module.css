@@ -1,0 +1,108 @@
+.card {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55);
+  border-color: #444;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: .5rem;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.25rem;
+}
+
+.status {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  padding: .25rem .45rem;
+  border-radius: 6px;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #aaa;
+}
+
+.description {
+  color: #ccc;
+  font-size: .85rem;
+  line-height: 1.2rem;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.badge {
+  font-size: .6rem;
+  letter-spacing: .05em;
+  padding: .3rem .5rem;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #bbb;
+}
+
+.actions {
+  display: flex;
+  gap: .6rem;
+  margin-top: .4rem;
+}
+
+.linkBtn {
+  font-size: .65rem;
+  padding: .45rem .65rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #ddd;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .15s, color .15s, border-color .15s;
+}
+
+.linkBtn:hover {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #fff;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #181818;
+  border: 1px solid #222;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: .85;
+}

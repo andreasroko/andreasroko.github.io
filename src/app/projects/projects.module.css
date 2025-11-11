@@ -1,0 +1,20 @@
+.container {
+    width: 70%;
+    height: auto;
+    color: white;
+    overflow: visible;
+}
+
+.scrollable {
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.cardContainer {
+    max-width: 300px;
+}
