@@ -81,24 +81,6 @@
     color: black;
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    padding-bottom: 15px;
-    width: 100%;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.7);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.horizontal-padding-small {
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
 .profile-picture {
     width: 150px;
     /* Set the desired size */
