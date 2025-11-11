@@ -66,3 +66,8 @@ body {
   padding-left: 25px;
   padding-right: 25px;
 }
+
+.header-fixed {
+  position: fixed;
+  width: 100%;
+}
