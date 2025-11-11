@@ -30,26 +30,23 @@
 
 .nav {
     display: flex;
-    gap: .65rem;
 }
 
 .navLink {
-    padding: .45rem .9rem;
-    border: 1px solid #333;
-    border-radius: 8px;
-    font-size: .7rem;
-    font-weight: 500;
-    letter-spacing: .05em;
+    margin: 0 10px;
+    font-size: 1rem;
+    padding: 8px 20px;
+    border: 1px solid white;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
     text-decoration: none;
-    color: #eee;
-    background: #121212;
-    transition: background .15s, border-color .15s, color .15s;
+    color: white;
 }
 
 .navLink:hover {
-    background: #1e1e1e;
-    border-color: #444;
-    color: #fff;
+    background-color: white;
+    color: black;
 }
 
 @media (min-width:800px) {
