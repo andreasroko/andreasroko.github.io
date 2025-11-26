@@ -48,6 +48,26 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    .content {
+        width: 80%;
+    }
+
+        @keyframes expandHeight {
+            from {
+                height: 0;
+            }
+    
+            99% {
+                height: 175px;
+            }
+    
+            to {
+                height: auto;
+            }
+        }
+}
+
 
 .main-title {
     font-size: 2rem;
@@ -62,10 +82,10 @@
 .nav-links {
     padding-top: 30px;
     display: flex;
+    gap: 5px;
 }
 
 .actionButton {
-    margin: 0 10px;
     font-size: 1rem;
     padding: 8px 20px;
     border: 1px solid white;
