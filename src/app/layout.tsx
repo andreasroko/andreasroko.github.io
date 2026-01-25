@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "../components/Header";
+import Footer from "../components/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,16 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="header-fixed">
+        <div className="fixed top-0 left-0 w-full z-50">
           <Header />
         </div>
-        <div className="container">
-          <div className="overlay">
+        <div className="bg-cover bg-center" style={{ backgroundImage: "url('/lakeBackground.jpeg')" }}>
+          <div className="bg-black/60 w-full min-h-screen flex justify-center items-center flex-col">
             {children}
-            <div className='footer'>
-              <div className='horizontal-padding-small'>© ANDREAS ROKOPANOS {new Date().getFullYear()}</div>
-              <div className='horizontal-padding-small' aria-label='Photo Location'>📌 Tymphi</div>
-            </div>
+            <Footer />
           </div>
         </div>
       </body>

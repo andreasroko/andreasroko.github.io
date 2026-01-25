@@ -1,7 +1,7 @@
 "use client";
 import 'react-vertical-timeline-component/style.min.css';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import styles from './page.module.css'
+import React from 'react';
 
 type Experience = {
   title: string;
@@ -51,8 +51,8 @@ const experiences: Experience[] = [
 
 export default function ResumePage() {
   return (
-    <main className={styles.container}>
-      <div className={styles.scrollable}>
+    <main className="w-full flex items-center justify-center flex-col text-white overflow-visible">
+      <div className="max-h-[80vh] overflow-y-auto w-full h-auto">
         <VerticalTimeline>
           {[...experiences].reverse().map((exp, idx) => (
           <VerticalTimelineElement

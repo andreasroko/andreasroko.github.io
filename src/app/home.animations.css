@@ -1,0 +1,32 @@
+/* Homepage animations (scoped to homepage via import in page.tsx) */
+.animate-expand {
+  /* start collapsed (show only borders) and expand height to reveal content
+     using max-height so layout grows downward from the box top */
+  max-height: 0px; /* initial small gap between borders */
+  overflow: hidden;
+  will-change: max-height;
+  animation: expandHeight 2s cubic-bezier(.08,.68,.24,1) forwards;
+  animation-delay: 0.45s;
+}
+
+@keyframes expandHeight {
+  from { max-height: 0px; }
+  to { max-height: 400px; }
+}
+
+.animate-line {
+  width: 1px;
+  height: 0; /* start collapsed so it doesn't reserve space */
+  background: rgba(255,255,255,0.8);
+  margin: 0; /* removed margins so line doesn't shift layout */
+  will-change: height;
+  animation: lineHeight 2s cubic-bezier(.08,.68,.24,1) forwards;
+  animation-delay: 0.45s;
+}
+
+@keyframes lineHeight {
+  from { height: 0; }
+  to { height: 70px; }
+}
+
+/* Portrait remains static; no portrait animation (image sits above the line) */
