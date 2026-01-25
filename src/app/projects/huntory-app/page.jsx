@@ -1590,10 +1590,10 @@ export default function App() {
   const [role, setRole] = useState('contributor'); // contributor, curator, expert
 
   return (
-    <div className="h-screen w-screen bg-[#0f172a] flex flex-col items-center justify-center font-sans">
+    <div className="min-h-screen w-screen bg-[#0f172a] flex flex-col items-center justify-center font-sans">
       
       {/* Role Switcher (Top of screen) */}
-      <div className="absolute top-8 z-50 bg-slate-800/90 backdrop-blur rounded-full p-1.5 border border-slate-700 shadow-xl flex gap-1">
+      <div className="relative top-8 z-50 bg-slate-800/90 backdrop-blur rounded-full p-1.5 border border-slate-700 shadow-xl flex gap-1">
         <button 
             onClick={() => setRole('contributor')}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2 ${role === 'contributor' ? 'bg-indigo-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'}`}
