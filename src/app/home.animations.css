@@ -1,32 +1,87 @@
-/* Homepage animations (scoped to homepage via import in page.tsx) */
-.animate-expand {
-  /* start collapsed (show only borders) and expand height to reveal content
-     using max-height so layout grows downward from the box top */
-  max-height: 0px; /* initial small gap between borders */
-  overflow: hidden;
-  will-change: max-height;
-  animation: expandHeight 2s cubic-bezier(.08,.68,.24,1) forwards;
-  animation-delay: 0.45s;
-}
+/* Homepage intro animation (scoped to homepage via import in page.tsx).
+   Start: portrait with the title box collapsed into a single horizontal line
+   attached to its bottom. Then the vertical line grows, pushing the box down,
+   while the box opens downward to reveal the title. Buttons fade up last.
+   Base styles are the final state and every element keeps its final size from
+   the first frame, so nothing reflows and the portrait never moves; only
+   transform, clip-path, opacity and the bottom border's offset animate.
+   The line and the box share duration and easing, so the line's end always
+   touches the box's top edge. */
 
-@keyframes expandHeight {
-  from { max-height: 0px; }
-  to { max-height: 400px; }
+:root {
+  --intro-line: 70px;
+  --intro-delay: 0.3s;
+  --intro-duration: 1.2s;
+  --intro-ease: cubic-bezier(.65, 0, .35, 1);
 }
 
 .animate-line {
   width: 1px;
-  height: 0; /* start collapsed so it doesn't reserve space */
-  background: rgba(255,255,255,0.8);
-  margin: 0; /* removed margins so line doesn't shift layout */
-  will-change: height;
-  animation: lineHeight 2s cubic-bezier(.08,.68,.24,1) forwards;
-  animation-delay: 0.45s;
+  height: var(--intro-line);
+  background: rgba(255, 255, 255, 0.8);
+  transform-origin: top;
+  animation: drawDown var(--intro-duration) var(--intro-ease) var(--intro-delay) both;
 }
 
-@keyframes lineHeight {
-  from { height: 0; }
-  to { height: 70px; }
+.animate-expand {
+  position: relative;
+  padding: 0.75rem 0;
+  animation:
+    pushDown var(--intro-duration) var(--intro-ease) var(--intro-delay) both,
+    reveal var(--intro-duration) var(--intro-ease) var(--intro-delay) both;
 }
 
-/* Portrait remains static; no portrait animation (image sits above the line) */
+/* Top and bottom borders */
+.animate-expand::before,
+.animate-expand::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #fff;
+}
+
+.animate-expand::before {
+  top: 0;
+}
+
+.animate-expand::after {
+  bottom: 0;
+  animation: openBottom var(--intro-duration) var(--intro-ease) var(--intro-delay) both;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s cubic-bezier(.22, 1, .36, 1) calc(var(--intro-delay) + var(--intro-duration) - 0.2s) both;
+}
+
+@keyframes drawDown {
+  from { transform: scaleY(0); }
+}
+
+@keyframes pushDown {
+  from { transform: translateY(calc(-1 * var(--intro-line))); }
+}
+
+@keyframes openBottom {
+  from { bottom: calc(100% - 1px); }
+}
+
+/* Clip follows the bottom border: both use percentages of the same box. */
+@keyframes reveal {
+  from { clip-path: inset(0 0 calc(100% - 1px) 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-line,
+  .animate-expand,
+  .animate-expand::after,
+  .animate-fade-up {
+    animation: none;
+  }
+}
