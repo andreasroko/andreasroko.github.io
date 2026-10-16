@@ -18,7 +18,7 @@ npm install        # install deps (CI uses `npm ci`, Node 20)
 npm run dev        # dev server at http://localhost:3000 (uses --webpack)
 npm run build      # static export to ./out (uses --webpack)
 npm run lint       # ESLint 9 flat config (next core-web-vitals + typescript)
-npm run deploy     # builds, then pushes ./out to the gh-pages branch
+npx serve out      # preview the static export locally (`npm start` does not work with output: 'export')
 ```
 
 Always keep the `--webpack` flag on `dev`/`build`; don't switch to Turbopack without testing.
@@ -87,9 +87,9 @@ It is plain JS (explicitly included in `tsconfig.json`). Keep edits local to the
 
 ## Deployment
 
-Deploy manually with `npm run deploy`: it builds, then the `gh-pages` package publishes `./out` to the `gh-pages` branch, which GitHub Pages serves (Pages source: "Deploy from a branch" → `gh-pages`).
+**Every push to `main` deploys to production.** `.github/workflows/deploy.yml` runs `npm ci` and `npm run build`, then publishes `./out` with `actions/deploy-pages` (Pages source: "GitHub Actions"). It can also be run manually from the Actions tab (`workflow_dispatch`).
 
-There is no CI. Pushing to `main` does **not** deploy. Don't add a GitHub Actions Pages workflow without also switching the repo's Pages source to "GitHub Actions".
+So a broken build on `main` means a failed deploy (the live site keeps the previous version). Run `npm run lint` and `npm run build` before pushing. There is no manual deploy command, and the old `gh-pages` branch is no longer served.
 
 ## Git
 
