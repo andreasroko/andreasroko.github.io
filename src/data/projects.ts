@@ -17,7 +17,7 @@ export const projects: Project[] = [
     technologies: ['React', 'Next.js', 'Tailwind CSS', 'HCI', 'Research'],
     repoUrl: undefined,
     demoUrl: '/projects/huntory-app',
-    image: '/huntory-mockup.png',
+    image: '/huntory-mockup.svg',
     status: 'experimental'
   }
 ];
