@@ -35,3 +35,26 @@ body {
     color-scheme: dark;
   }
 }
+
+/* Resume timeline: react-vertical-timeline-component CSS is unlayered and beats
+   Tailwind utilities, so these overrides use extra specificity. The library's
+   date sits beside the card in the two-column layout (>=1170px); below that the
+   card shows its own inline date instead. */
+.vertical-timeline .vertical-timeline-element-content .resume-date {
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+@media (max-width: 1169px) {
+  .vertical-timeline .vertical-timeline-element-content .resume-date {
+    display: none;
+  }
+}
+
+@media (min-width: 1170px) {
+  .vertical-timeline .vertical-timeline-element-content .resume-date-inline {
+    display: none;
+  }
+}
