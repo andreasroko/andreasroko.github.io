@@ -2,12 +2,12 @@
 import './home.animations.css';
 import Image from "next/image";
 import Link from "next/link";
-import portraitImg from '../../public/portrait.jpeg'
+import portraitImg from '../../public/portrait.webp'
 
 export default function Home() {
   return (
     <main className="flex items-center justify-center min-h-dvh relative text-white text-center flex-col w-full px-4">
-      <Image src={portraitImg} alt="My Portrait" className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] rounded-full object-cover border-2 border-white shadow-lg" />
+      <Image src={portraitImg} alt="Andreas Rokopanos" className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] rounded-full object-cover border-2 border-white shadow-lg" />
       <div className="animate-line" />
       <div className="w-full max-w-md sm:w-[60%] md:w-[45%] md:max-w-none flex flex-col items-center animate-expand">
         <h1 className="text-xl sm:text-2xl tracking-[0.15em] sm:tracking-widest">ANDREAS ROKOPANOS</h1>

@@ -27,6 +27,9 @@ jobs:
 
       - run: npm ci
 
+      # The Huntory demo has known lint issues; it is excluded until they are fixed.
+      - run: npx eslint --ignore-pattern 'src/app/projects/huntory-app/**'
+
       - run: npm run build
 
       - uses: actions/configure-pages@v5

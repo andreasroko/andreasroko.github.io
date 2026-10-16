@@ -1,6 +1,12 @@
 import { projects } from '../../data/projects';
 import { ProjectCard } from '../../components/ProjectCard';
 import React from 'react';
+import { pageMetadata } from '../../data/site';
+
+export const metadata = pageMetadata(
+  'Projects',
+  'Selected projects by Andreas Rokopanos in software engineering, HCI and digital humanities.',
+);
 
 export default function ProjectsPage() {
   return (

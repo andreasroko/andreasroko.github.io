@@ -1,5 +1,11 @@
 import React from 'react';
 import { ArrowUpRight, Mail } from 'lucide-react';
+import { pageMetadata } from '../../data/site';
+
+export const metadata = pageMetadata(
+  'Contact',
+  'Get in touch with Andreas Rokopanos by email, LinkedIn or GitHub.',
+);
 
 // Links with an empty href are not rendered.
 const EMAIL = 'andreasrokopanos4@gmail.com';
