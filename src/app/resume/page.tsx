@@ -67,7 +67,7 @@ const cardBorder = 'rgba(255, 255, 255, 0.12)';
 export default function ResumePage() {
   return (
     <main className="w-full flex items-center justify-center flex-col text-white overflow-visible">
-      <div className="max-h-[80vh] overflow-y-auto w-full h-auto">
+      <div className="max-h-[calc(100dvh-9rem)] overflow-y-auto w-full h-auto">
         <VerticalTimeline lineColor="rgba(255, 255, 255, 0.25)">
           {[...experiences].reverse().map((exp, idx) => {
             const { label, accent, Icon } = typeStyles[exp.type];

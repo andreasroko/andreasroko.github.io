@@ -31,7 +31,7 @@ export default function RootLayout({
           <Header />
         </div>
         <div className="bg-cover bg-center" style={{ backgroundImage: "url('/lakeBackground.jpeg')" }}>
-          <div className="bg-black/60 w-full min-h-screen flex justify-center items-center flex-col">
+          <div className="bg-black/60 w-full min-h-dvh flex justify-center items-center flex-col">
             {children}
             <Footer />
           </div>

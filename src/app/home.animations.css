@@ -15,6 +15,10 @@
   --intro-ease: cubic-bezier(.65, 0, .35, 1);
 }
 
+@media (max-width: 639px) {
+  :root { --intro-line: 50px; }
+}
+
 .animate-line {
   width: 1px;
   height: var(--intro-line);

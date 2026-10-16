@@ -64,7 +64,8 @@ Path alias `@/*` → `src/*` is configured, though existing code uses relative i
 - **Styling: Tailwind utility classes inline in JSX.** The repo migrated from CSS Modules to Tailwind; the only CSS files are `globals.css` and `home.animations.css` (keyframes). Don't add CSS Modules. Arbitrary values like `bg-[#111]` are used freely.
 - Visual style: dark, high-contrast, white text over the darkened background photo; uppercase, wide-tracked labels; outlined white buttons that invert on hover (`border border-white rounded hover:bg-white hover:text-black`). Match it.
 - Components: `export const Name: React.FC<Props> = …` with a named export (Footer also has a default export). Add `"use client"` only when a file uses hooks, browser APIs, or event handlers.
-- Pages are `export default function XPage()` returning a `<main>`. Pages with long content wrap it in a `max-h-[80vh] overflow-y-auto` container, because the layout centers content in a full-height viewport.
+- Pages are `export default function XPage()` returning a `<main>`. Pages with long content wrap it in a `max-h-[calc(100dvh-9rem)] overflow-y-auto` container, because the layout centers content in a full-height viewport and the fixed header/footer need clearance. Use `dvh`, not `vh`, so mobile browser toolbars don't push content under the header.
+- Mobile-first responsive: design for ~360px wide first, then add `sm:`/`md:` overrides. The header switches to a hamburger menu below `sm`.
 - Prefer accessible markup (`aria-label`, `aria-labelledby`, meaningful `alt` text) — existing components do this.
 - 2-space indentation, single quotes in most TS files.
 
