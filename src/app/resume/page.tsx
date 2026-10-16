@@ -36,7 +36,7 @@ const experiences: Experience[] = [
   {
     title: "Software Engineer",
     companyOrSchool: "Deloitte",
-    date: "March 2025 - Present",
+    date: "March 2025 - Dec 2025",
     description: "Salesforce and React-Express app architecture/design.",
     type: "work",
   },
@@ -46,6 +46,13 @@ const experiences: Experience[] = [
     date: "2025 - Present",
     description: "3D modeling, digital reconstruction, and HCI research.",
     type: "education",
+  },
+  {
+    title: "Software Engineer",
+    companyOrSchool: "Skroutz",
+    date: "Jan 2026 - Present",
+    description: "Building features for Greece's largest e-commerce marketplace.",
+    type: "work",
   },
 ];
 
