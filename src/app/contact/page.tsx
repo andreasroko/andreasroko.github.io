@@ -2,13 +2,13 @@ import React from 'react';
 import { ArrowUpRight, Mail } from 'lucide-react';
 
 // Links with an empty href are not rendered.
-const EMAIL = ''; // TODO: public contact address
-const LINKEDIN_URL = ''; // TODO: e.g. https://www.linkedin.com/in/<handle>
+const EMAIL = 'andreasrokopanos4@gmail.com';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/andreas-rokopanos-107025201/';
 const GITHUB_URL = 'https://github.com/andreasroko';
 
 const links = [
   { label: 'EMAIL', href: EMAIL && `mailto:${EMAIL}`, detail: EMAIL, external: false },
-  { label: 'LINKEDIN', href: LINKEDIN_URL, detail: 'linkedin.com', external: true },
+  { label: 'LINKEDIN', href: LINKEDIN_URL, detail: 'in/andreas-rokopanos', external: true },
   { label: 'GITHUB', href: GITHUB_URL, detail: 'github.com/andreasroko', external: true },
 ].filter(l => l.href);
 
