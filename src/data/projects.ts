@@ -26,6 +26,7 @@ export const projects: Project[] = [
     description: 'Turns a GPX hike into an interactive 3D miniature terrain diorama, with a glowing trail, summit markers, map and topo themes, real elevation data, an elevation profile and PNG snapshots. No API keys needed.',
     technologies: ['React', 'three.js', 'React Three Fiber', 'Vite', 'Tailwind CSS'],
     repoUrl: 'https://github.com/andreasroko/trail-trophy',
+    demoUrl: 'https://andreasroko.github.io/trail-trophy/',
     status: 'active'
   }
 ];
