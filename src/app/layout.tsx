@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { Header } from "../components/Header";
 import Footer from "../components/Footer";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, pageMetadata } from "../data/site";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL, pageMetadata } from "../data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...pageMetadata(SITE_NAME, SITE_DESCRIPTION),
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
   title: {
-    default: SITE_NAME,
+    default: SITE_TITLE,
     template: `%s · ${SITE_NAME}`,
   },
 };

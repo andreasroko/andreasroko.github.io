@@ -4,6 +4,7 @@ import { pageMetadata } from '../../data/site';
 export const metadata = pageMetadata(
   'Resume',
   'Work experience and education of Andreas Rokopanos, software engineer and digital humanities researcher.',
+  '/resume',
 );
 
 export default function ResumeLayout({ children }: { children: React.ReactNode }) {

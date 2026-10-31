@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
           <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#444]">
             <Image src={portraitImg} alt="Andreas Rokopanos portrait" width={40} height={40} />
           </div>
-          <h1 className="font-semibold text-base tracking-wider m-0 truncate">{current ? current.label : 'ANDREAS ROKOPANOS'}</h1>
+          <p className="font-semibold text-base tracking-wider m-0 truncate">{current ? current.label : 'ANDREAS ROKOPANOS'}</p>
         </div>
       )}
 

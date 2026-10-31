@@ -36,18 +36,19 @@ src/
     globals.css              Tailwind import + minimal global resets
     not-found.tsx            Custom 404 page (exported as out/404.html, which GitHub Pages serves)
     sitemap.ts, robots.ts    Generated at build time from src/data/site.ts and projects.ts
-    page.tsx                 Home (portrait, name, animated lines, short bio)
+    page.tsx                 Home (portrait, name, animated lines, short bio) + JSON-LD structured data (Person/ProfilePage); keep it in sync with the resume
     home.animations.css      Keyframes used by the home page (animate-line, animate-expand)
     resume/page.tsx          Vertical timeline; experience data is inline in this file (metadata in resume/layout.tsx)
     projects/page.tsx        Grid of ProjectCards from src/data/projects.ts
     projects/huntory-app/page.jsx   Large (~1600 line) standalone interactive phone-prototype demo (JSX, not TSX)
-    contact/page.tsx         Contact links (email / LinkedIn / GitHub constants at the top; empty ones are hidden)
+    contact/page.tsx         Contact links (email constant at the top; LinkedIn/GitHub URLs come from site.ts; empty ones are hidden)
+    icon.jpg, apple-icon.jpg Square portrait icons (favicon.ico covers 16/32px; Google needs >=48px)
   components/
     Header.tsx               Top-right text nav on every page; off the home page it also shows the portrait + current page title
     Footer.tsx               Copyright + photo location; hidden on paths listed in `hiddenPaths`
     ProjectCard.tsx          Card for one Project
   data/projects.ts           `Project` interface + `projects` array (source of truth for the Projects page)
-  data/site.ts               SITE_URL/NAME/DESCRIPTION, SITE_PAGES (sitemap), pageMetadata() helper
+  data/site.ts               SITE_URL/NAME/TITLE/DESCRIPTION, JOB_TITLE, profile URLs, SITE_PAGES (sitemap), pageMetadata() helper
   declarations.d.ts          Module shim for react-vertical-timeline-component
 public/                      Static assets (portrait.webp, lakeBackground.webp, og-image.jpg, kevin-icon.svg, huntory-mockup.svg, .nojekyll)
 ```
@@ -80,9 +81,9 @@ Path alias `@/*` → `src/*` is configured, though existing code uses relative i
 
 **Edit resume entries:** edit the `experiences` array in `src/app/resume/page.tsx` (chronological order; it is reversed for display).
 
-**Add a top-level page:** create `src/app/<name>/page.tsx`, export `metadata = pageMetadata('<Title>', '<description>')` from `src/data/site.ts` (sets the title, description and the link-preview tags with the shared image; don't hand-write `openGraph`, since a page-level one replaces the parent's entirely), and add the path to `navItems` in `src/components/Header.tsx` and to `SITE_PAGES` in `src/data/site.ts`. A client component (`"use client"`) can't export `metadata`, so put it in a sibling `layout.tsx` instead (see `resume/layout.tsx`).
+**Add a top-level page:** create `src/app/<name>/page.tsx`, export `metadata = pageMetadata('<Title>', '<description>', '/<name>')` from `src/data/site.ts` (sets the title, description, canonical URL and the link-preview tags with the shared image; always pass the path, since GitHub Pages serves every page at both `/x` and `/x.html`; don't hand-write `openGraph`, since a page-level one replaces the parent's entirely), and add the path to `navItems` in `src/components/Header.tsx` and to `SITE_PAGES` in `src/data/site.ts`. A client component (`"use client"`) can't export `metadata`, so put it in a sibling `layout.tsx` instead (see `resume/layout.tsx`).
 
-**Change site metadata:** `metadata` export in `src/app/layout.tsx`. If the name or tagline changes, regenerate `public/og-image.jpg` too (1200x630, it has them baked in).
+**Change site metadata:** `metadata` export in `src/app/layout.tsx` and the constants in `src/data/site.ts`. Each page needs exactly one `<h1>` (the header's page label is a `<p>`); use `sr-only` when it shouldn't be visible. If the name or tagline changes, regenerate `public/og-image.jpg` too (1200x630, it has them baked in).
 
 ## Huntory demo (`src/app/projects/huntory-app/page.jsx`)
 
