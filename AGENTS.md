@@ -36,14 +36,14 @@ src/
     globals.css              Tailwind import + minimal global resets
     not-found.tsx            Custom 404 page (exported as out/404.html, which GitHub Pages serves)
     sitemap.ts, robots.ts    Generated at build time from src/data/site.ts and projects.ts
-    page.tsx                 Home (portrait, name, animated lines, nav buttons)
+    page.tsx                 Home (portrait, name, animated lines, short bio)
     home.animations.css      Keyframes used by the home page (animate-line, animate-expand)
     resume/page.tsx          Vertical timeline; experience data is inline in this file (metadata in resume/layout.tsx)
     projects/page.tsx        Grid of ProjectCards from src/data/projects.ts
     projects/huntory-app/page.jsx   Large (~1600 line) standalone interactive phone-prototype demo (JSX, not TSX)
     contact/page.tsx         Contact links (email / LinkedIn / GitHub constants at the top; empty ones are hidden)
   components/
-    Header.tsx               Nav; hidden on "/", shows current page title + links to the other pages
+    Header.tsx               Top-right text nav on every page; off the home page it also shows the portrait + current page title
     Footer.tsx               Copyright + photo location; hidden on paths listed in `hiddenPaths`
     ProjectCard.tsx          Card for one Project
   data/projects.ts           `Project` interface + `projects` array (source of truth for the Projects page)
@@ -67,7 +67,7 @@ Path alias `@/*` → `src/*` is configured, though existing code uses relative i
 ## Conventions
 
 - **Styling: Tailwind utility classes inline in JSX.** The repo migrated from CSS Modules to Tailwind; the only CSS files are `globals.css` and `home.animations.css` (keyframes). Don't add CSS Modules. Arbitrary values like `bg-[#111]` are used freely.
-- Visual style: dark, high-contrast, white text over the darkened background photo; uppercase, wide-tracked labels; outlined white buttons that invert on hover (`border border-white rounded hover:bg-white hover:text-black`). Match it.
+- Visual style: dark, high-contrast, white text over the darkened background photo; uppercase, wide-tracked labels; outlined white buttons that invert on hover (`border border-white rounded hover:bg-white hover:text-black`). Match it. The header nav is the exception: plain white text links with an underline on hover and on the current page.
 - Components: `export const Name: React.FC<Props> = …` with a named export (Footer also has a default export). Add `"use client"` only when a file uses hooks, browser APIs, or event handlers.
 - Pages are `export default function XPage()` returning a `<main>`. Pages with long content wrap it in a `max-h-[calc(100dvh-9rem)] overflow-y-auto` container, because the layout centers content in a full-height viewport and the fixed header/footer need clearance. Use `dvh`, not `vh`, so mobile browser toolbars don't push content under the header.
 - Mobile-first responsive: design for ~360px wide first, then add `sm:`/`md:` overrides. The header switches to a hamburger menu below `sm`.
@@ -80,7 +80,7 @@ Path alias `@/*` → `src/*` is configured, though existing code uses relative i
 
 **Edit resume entries:** edit the `experiences` array in `src/app/resume/page.tsx` (chronological order; it is reversed for display).
 
-**Add a top-level page:** create `src/app/<name>/page.tsx`, export `metadata = pageMetadata('<Title>', '<description>')` from `src/data/site.ts` (sets the title, description and the link-preview tags with the shared image; don't hand-write `openGraph`, since a page-level one replaces the parent's entirely), and add the path to `navItems` in `src/components/Header.tsx`, to the buttons on the home page (`src/app/page.tsx`) and to `SITE_PAGES` in `src/data/site.ts`. A client component (`"use client"`) can't export `metadata`, so put it in a sibling `layout.tsx` instead (see `resume/layout.tsx`).
+**Add a top-level page:** create `src/app/<name>/page.tsx`, export `metadata = pageMetadata('<Title>', '<description>')` from `src/data/site.ts` (sets the title, description and the link-preview tags with the shared image; don't hand-write `openGraph`, since a page-level one replaces the parent's entirely), and add the path to `navItems` in `src/components/Header.tsx` and to `SITE_PAGES` in `src/data/site.ts`. A client component (`"use client"`) can't export `metadata`, so put it in a sibling `layout.tsx` instead (see `resume/layout.tsx`).
 
 **Change site metadata:** `metadata` export in `src/app/layout.tsx`. If the name or tagline changes, regenerate `public/og-image.jpg` too (1200x630, it has them baked in).
 
@@ -100,3 +100,13 @@ So a broken build on `main` means a failed deploy (the live site keeps the previ
 
 - Default branch: `main`. Commit messages are short, imperative, sentence case (e.g. "Make container scrollable in huntory app").
 - `out/`, `build/`, `.next/`, and `next-env.d.ts` are build artifacts and gitignored — never commit them.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

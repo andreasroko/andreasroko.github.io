@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 
 export const SITE_URL = 'https://andreasroko.github.io';
 export const SITE_NAME = 'Andreas Rokopanos';
-export const SITE_DESCRIPTION = 'Andreas Rokopanos - Software Engineer & Researcher. Resume, projects and contact.';
+export const SITE_DESCRIPTION =
+  'Andreas Rokopanos is a software engineer at Skroutz and an MSc student in Digital Humanities, researching 3D reconstruction and HCI. Resume, projects and contact.';
 
 // Top-level pages, used by the sitemap. Project demo pages come from projects.ts.
 export const SITE_PAGES = ['/', '/resume', '/projects', '/contact'];

@@ -1,7 +1,6 @@
 "use client";
 import './home.animations.css';
 import Image from "next/image";
-import Link from "next/link";
 import portraitImg from '../../public/portrait.webp'
 
 export default function Home() {
@@ -11,13 +10,13 @@ export default function Home() {
       <div className="animate-line" />
       <div className="w-full max-w-md sm:w-[60%] md:w-[45%] md:max-w-none flex flex-col items-center animate-expand">
         <h1 className="text-xl sm:text-2xl tracking-[0.15em] sm:tracking-widest">ANDREAS ROKOPANOS</h1>
-        <p className="text-xs sm:text-sm tracking-wide mt-2">ELECTRICAL AND COMPUTER ENGINEER</p>
+        <p className="text-xs sm:text-sm tracking-wide mt-2">SOFTWARE ENGINEER</p>
       </div>
-      <div className="flex flex-wrap justify-center gap-3 mt-10 sm:mt-12 animate-fade-up">
-        <Link href="/resume" className="text-sm sm:text-base px-4 py-2.5 sm:py-2 border border-white rounded transition-colors hover:bg-white hover:text-black">RESUME</Link>
-        <Link href="/projects" className="text-sm sm:text-base px-4 py-2.5 sm:py-2 border border-white rounded transition-colors hover:bg-white hover:text-black">PROJECTS</Link>
-        <Link href="/contact" className="text-sm sm:text-base px-4 py-2.5 sm:py-2 border border-white rounded transition-colors hover:bg-white hover:text-black">CONTACT</Link>
-      </div>
+      <p className="max-w-md mt-8 sm:mt-10 text-sm sm:text-base leading-relaxed text-white/80 animate-fade-up">
+        Software engineer at Skroutz, building features for Greece&apos;s largest e-commerce marketplace.
+        I&apos;m also studying for an MSc in Digital Humanities at the University of Athens, with research in
+        3D reconstruction and human-computer interaction.
+      </p>
     </main>
   );
 }
